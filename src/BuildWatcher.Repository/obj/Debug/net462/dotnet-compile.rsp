@@ -1,0 +1,22 @@
+--temp-output:C:\Users\david.rector\Documents\Visual Studio 2015\Projects\BuildWatcher\src\BuildWatcher.Repository\obj\Debug\net462\
+--out:C:\Users\david.rector\Documents\Visual Studio 2015\Projects\BuildWatcher\src\BuildWatcher.Repository\bin\Debug\net462\BuildWatcher.Repository.dll
+--define:DEBUG
+--define:TRACE
+--define:NET462
+--suppress-warning:CS1701
+--suppress-warning:CS1702
+--suppress-warning:CS1705
+--optimize:False
+--output-name:BuildWatcher.Repository
+--file-version:1.0.0.0
+--version:1.0.0.0
+--informational-version:1.0.0
+--target-framework:.NETFramework,Version=v4.6.2
+--reference:C:\Users\david.rector\Documents\Visual Studio 2015\Projects\BuildWatcher\src\BuildWatcher.Model\bin\Debug\net462\BuildWatcher.Model.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2\mscorlib.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2\System.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2\System.Core.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2\Microsoft.CSharp.dll
+C:\Users\david.rector\Documents\Visual Studio 2015\Projects\BuildWatcher\src\BuildWatcher.Repository\BuildRepository.cs
+C:\Users\david.rector\Documents\Visual Studio 2015\Projects\BuildWatcher\src\BuildWatcher.Repository\IBuildRepository.cs
+C:\Users\david.rector\Documents\Visual Studio 2015\Projects\BuildWatcher\src\BuildWatcher.Repository\Properties\AssemblyInfo.cs

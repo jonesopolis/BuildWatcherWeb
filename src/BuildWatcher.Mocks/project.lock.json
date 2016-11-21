@@ -1,0 +1,111 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.6.2": {
+      "Castle.Core/3.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Castle.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Castle.Core.dll": {}
+        }
+      },
+      "Moq/4.6.38-alpha": {
+        "type": "package",
+        "dependencies": {
+          "Castle.Core": "3.3.3"
+        },
+        "compile": {
+          "lib/net45/Moq.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Moq.dll": {}
+        }
+      },
+      "BuildWatcher.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "compile": {
+          "net462/BuildWatcher.Model.dll": {}
+        },
+        "runtime": {
+          "net462/BuildWatcher.Model.dll": {}
+        }
+      },
+      "BuildWatcher.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "dependencies": {
+          "BuildWatcher.Model": "1.0.0"
+        },
+        "compile": {
+          "net462/BuildWatcher.Repository.dll": {}
+        },
+        "runtime": {
+          "net462/BuildWatcher.Repository.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Castle.Core/3.3.3": {
+      "sha512": "tvVrLbHhtAGubUUDbEkH9JlivdlJOTI25u3hlyHpPxuJdTVi/yVQKWCYvGpafGPm7G1ibdWj4brqhtSQkAmN+g==",
+      "type": "package",
+      "path": "Castle.Core/3.3.3",
+      "files": [
+        "ASL - Apache Software Foundation License.txt",
+        "BreakingChanges.txt",
+        "Castle.Core.3.3.3.nupkg.sha512",
+        "Castle.Core.nuspec",
+        "Changes.txt",
+        "License.txt",
+        "lib/net35/Castle.Core.dll",
+        "lib/net35/Castle.Core.xml",
+        "lib/net40-client/Castle.Core.dll",
+        "lib/net40-client/Castle.Core.xml",
+        "lib/net45/Castle.Core.dll",
+        "lib/net45/Castle.Core.xml",
+        "lib/sl4/Castle.Core.dll",
+        "lib/sl4/Castle.Core.xml",
+        "lib/sl5/Castle.Core.dll",
+        "lib/sl5/Castle.Core.xml",
+        "readme.txt"
+      ]
+    },
+    "Moq/4.6.38-alpha": {
+      "sha512": "avMAfImICo7K8kkSqZDnwS7qvwyyNzNDQQFtnsI4CxAgi+ESOLFr1j5ucAE2hGoG1k5A0B1+3zfNYhHkozW1EA==",
+      "type": "package",
+      "path": "Moq/4.6.38-alpha",
+      "files": [
+        "Moq.4.6.38-alpha.nupkg.sha512",
+        "Moq.nuspec",
+        "lib/net45/Moq.dll",
+        "lib/net45/Moq.xml",
+        "lib/netstandard1.3/Moq.dll",
+        "lib/netstandard1.3/Moq.xml"
+      ]
+    },
+    "BuildWatcher.Model/1.0.0": {
+      "type": "project",
+      "path": "../BuildWatcher.Model/project.json",
+      "msbuildProject": "../BuildWatcher.Model/BuildWatcher.Model.xproj"
+    },
+    "BuildWatcher.Repository/1.0.0": {
+      "type": "project",
+      "path": "C:\\Users\\david.rector\\Documents\\Visual Studio 2015\\Projects\\BuildWatcher\\src\\BuildWatcher.Repository\\project.json",
+      "msbuildProject": "C:\\Users\\david.rector\\Documents\\Visual Studio 2015\\Projects\\BuildWatcher\\src\\BuildWatcher.Repository\\BuildWatcher.Repository.xproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "BuildWatcher.Model >= 1.0.0-*",
+      "BuildWatcher.Repository >= 1.0.0-*",
+      "Moq >= 4.6.38-alpha"
+    ],
+    ".NETFramework,Version=v4.6.2": []
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
+}

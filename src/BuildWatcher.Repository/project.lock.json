@@ -1,0 +1,33 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.6.2": {
+      "BuildWatcher.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "compile": {
+          "net462/BuildWatcher.Model.dll": {}
+        },
+        "runtime": {
+          "net462/BuildWatcher.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BuildWatcher.Model/1.0.0": {
+      "type": "project",
+      "path": "../BuildWatcher.Model/project.json",
+      "msbuildProject": "../BuildWatcher.Model/BuildWatcher.Model.xproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "BuildWatcher.Model >= 1.0.0-*"
+    ],
+    ".NETFramework,Version=v4.6.2": []
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
+}

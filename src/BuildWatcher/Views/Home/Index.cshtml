@@ -1,0 +1,8 @@
+﻿@model List<BuildWatcher.Model.Build>
+
+<div class="row">
+    @foreach (var build in Model)
+    {
+        await Html.RenderPartialAsync("Build", build);
+    }
+</div>

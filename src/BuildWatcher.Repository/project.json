@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net462": {}
+  },
+  "dependencies": {
+    "BuildWatcher.Model": "1.0.0-*"
+  }
+}
