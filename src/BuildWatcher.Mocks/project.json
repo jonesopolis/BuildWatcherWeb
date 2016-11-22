@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "BuildWatcher.Model": "1.0.0-*",
+    "BuildWatcher.Repository": "1.0.0-*",
+    "Faker.Net": "1.0.3",
+    "Moq": "4.6.38-alpha"
+  },
+
+  "frameworks": {
+    "net46": {}
+  }
+}
