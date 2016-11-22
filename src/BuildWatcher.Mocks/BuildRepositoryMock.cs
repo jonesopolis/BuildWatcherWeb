@@ -12,32 +12,36 @@ namespace BuildWatcher.Mocks
         {
             var mock = new Mock<IBuildRepository>();
 
-            mock.Setup(m => m.GetBuildsForUser(It.IsAny<string>())).Returns(() =>
+            mock.Setup(m => m.GetSubscribedBuildsForUser(It.IsAny<string>()))
+                .Returns(() =>
             {
                 var list = new List<Build>();
 
                 var build = new Build();
-                build.Name = "Super Build 1";
-                build.FriendlyName = "Super Friendly Build 1";
+                build.FriendlyName = Faker.Company.Name();
+                build.Name = Faker.Company.CatchPhrase();
                 list.Add(build);
 
                 build = new Build();
-                build.Name = "Super Build 2";
-                build.FriendlyName = "Super Friendly Build 2";
+                build.FriendlyName = Faker.Company.Name();
+                build.Name = Faker.Company.CatchPhrase();
                 list.Add(build);
 
                 build = new Build();
-                build.Name = "Super Build 3";
-                build.FriendlyName = "Super Friendly Build 3";
+                build.FriendlyName = Faker.Company.Name();
+                build.Name = Faker.Company.CatchPhrase();
                 list.Add(build);
 
                 build = new Build();
-                build.Name = "Super Build 4";
-                build.FriendlyName = "Super Friendly Build 4";
+                build.FriendlyName = Faker.Company.Name();
+                build.Name = Faker.Company.CatchPhrase();
                 list.Add(build);
 
-                return Task.FromResult(list);
+                return Task.FromResult(RepositoryResult<List<Build>>.CreateSuccess(list));
             });
+
+            mock.Setup(m => m.AddBuildSubscriptionForUser(It.IsAny<string>(), It.IsAny<string>()))
+                .Returns(() => Task.FromResult(RepositoryResult.CreateSuccess()));
 
             return mock.Object;
         }

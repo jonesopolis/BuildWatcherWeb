@@ -18,6 +18,10 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "BuildWatcher.Repository", "
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "BuildWatcher.Mocks", "src\BuildWatcher.Mocks\BuildWatcher.Mocks.xproj", "{D9CB53A1-8687-4A7B-9DC3-30CCCA3036F5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{03CE4472-2DA3-4F1B-916D-7F60E1F74D5F}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "BuildWatcher.Test", "BuildWatcher.Test\BuildWatcher.Test.xproj", "{7A4DA47A-9223-4BE3-A87C-B35F2EB04503}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +44,10 @@ Global
 		{D9CB53A1-8687-4A7B-9DC3-30CCCA3036F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9CB53A1-8687-4A7B-9DC3-30CCCA3036F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9CB53A1-8687-4A7B-9DC3-30CCCA3036F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A4DA47A-9223-4BE3-A87C-B35F2EB04503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A4DA47A-9223-4BE3-A87C-B35F2EB04503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A4DA47A-9223-4BE3-A87C-B35F2EB04503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A4DA47A-9223-4BE3-A87C-B35F2EB04503}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,5 +57,6 @@ Global
 		{0087EC18-90CE-49A0-9752-34BD00F854AE} = {3C1E4D96-68CE-410C-8D00-487FDA8DA69A}
 		{DDB81A1C-AFD0-496A-B74A-541E93E0F8FB} = {3C1E4D96-68CE-410C-8D00-487FDA8DA69A}
 		{D9CB53A1-8687-4A7B-9DC3-30CCCA3036F5} = {3C1E4D96-68CE-410C-8D00-487FDA8DA69A}
+		{7A4DA47A-9223-4BE3-A87C-B35F2EB04503} = {03CE4472-2DA3-4F1B-916D-7F60E1F74D5F}
 	EndGlobalSection
 EndGlobal

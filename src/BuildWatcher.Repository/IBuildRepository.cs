@@ -6,6 +6,8 @@ namespace BuildWatcher.Repository
 {
     public interface IBuildRepository
     {
-        Task<List<Build>> GetBuildsForUser(string user);
+        Task<RepositoryResult<List<Build>>> GetSubscribedBuildsForUser(string user);
+
+        Task<RepositoryResult> AddBuildSubscriptionForUser(string user, string build);
     }
 }

@@ -2,15 +2,15 @@
   "locked": false,
   "version": 2,
   "targets": {
-    ".NETFramework,Version=v4.6.2": {
+    ".NETFramework,Version=v4.6": {
       "BuildWatcher.Model/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.2",
+        "framework": ".NETFramework,Version=v4.6",
         "compile": {
-          "net462/BuildWatcher.Model.dll": {}
+          "net46/BuildWatcher.Model.dll": {}
         },
         "runtime": {
-          "net462/BuildWatcher.Model.dll": {}
+          "net46/BuildWatcher.Model.dll": {}
         }
       }
     }
@@ -26,7 +26,7 @@
     "": [
       "BuildWatcher.Model >= 1.0.0-*"
     ],
-    ".NETFramework,Version=v4.6.2": []
+    ".NETFramework,Version=v4.6": []
   },
   "tools": {},
   "projectFileToolGroups": {}
