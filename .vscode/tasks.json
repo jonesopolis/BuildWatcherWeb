@@ -1,0 +1,28 @@
+{
+    "version": "0.1.0",
+    "command": "cmd",
+    "args": [
+        "/C"
+    ],
+    "echoCommand": true,
+    "suppressTaskName": true,
+    "isShellCommand": true,
+    "tasks": [
+        {
+            "taskName": "build",
+            "args": [
+                "dotnet build ./src/BuildWatcher/"
+            ],
+            "isBuildCommand": true,
+            "showOutput": "always",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "webpack",
+            "args": [
+                "cd src/BuildWatcherWeb && webpack --progress --colors --watch"
+            ],
+            "showOutput": "always"
+        }
+    ]
+}

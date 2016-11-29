@@ -11,6 +11,14 @@
     "BuildWatcher.Repository": "1.0.0-*"
   },
   "frameworks": {
-    "net46": {}
+    "netcoreapp1.1": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.1.0"
+        }
+      },
+      "imports": "dnxcore50"
+    }
   }
 }
