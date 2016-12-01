@@ -58,9 +58,9 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _buildModal = __webpack_require__(182);
+	var _buildItem = __webpack_require__(182);
 
-	var _buildModal2 = _interopRequireDefault(_buildModal);
+	var _buildItem2 = _interopRequireDefault(_buildItem);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21847,31 +21847,58 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Modal = function (_React$Component) {
-	    _inherits(Modal, _React$Component);
+	var BuildItem = function (_React$Component) {
+	    _inherits(BuildItem, _React$Component);
 
-	    function Modal(props) {
-	        _classCallCheck(this, Modal);
+	    function BuildItem(props) {
+	        _classCallCheck(this, BuildItem);
 
-	        return _possibleConstructorReturn(this, (Modal.__proto__ || Object.getPrototypeOf(Modal)).call(this, props));
+	        return _possibleConstructorReturn(this, (BuildItem.__proto__ || Object.getPrototypeOf(BuildItem)).call(this, props));
 	    }
 
-	    _createClass(Modal, [{
+	    _createClass(BuildItem, [{
 	        key: 'render',
 	        value: function render() {
-	            var hatClass = 'hat ' + this.props.type;
 	            return _react2.default.createElement(
 	                'div',
-	                null,
-	                hatClass
+	                { className: 'col-md-4 col-lg-4' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'card' },
+	                    _react2.default.createElement(
+	                        'h3',
+	                        { className: 'card-header' },
+	                        '@build.FriendlyName'
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'card-block' },
+	                        _react2.default.createElement(
+	                            'h4',
+	                            { className: 'card-title' },
+	                            'Special title treatment'
+	                        ),
+	                        _react2.default.createElement(
+	                            'p',
+	                            { className: 'card-text' },
+	                            'With supporting text below as a natural lead-in to additional content.'
+	                        ),
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: '#', className: 'btn btn-primary' },
+	                            'Go somewhere'
+	                        )
+	                    )
+	                )
 	            );
 	        }
 	    }]);
 
-	    return Modal;
+	    return BuildItem;
 	}(_react2.default.Component);
 
-	exports.default = Modal;
+	_reactDom2.default.render(_react2.default.createElement(BuildItem, null), document.getElementById('app'));
+	exports.default = BuildItem;
 
 /***/ }
 /******/ ]);

@@ -30,7 +30,6 @@ namespace BuildWatcher
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
             services.AddTransient<IBuildRepository>(s => BuildRepositoryMock.GetMock());
         }
 
@@ -44,6 +43,7 @@ namespace BuildWatcher
             }
 
             app.UseStaticFiles();
+
             app.UseMvcWithDefaultRoute();
         }
 

@@ -20,7 +20,7 @@
         {
             "taskName": "webpack",
             "args": [
-                "cd src/BuildWatcherWeb && webpack --progress --colors --watch"
+                "cd src/BuildWatcher && webpack --progress --colors --watch"
             ],
             "showOutput": "always"
         }

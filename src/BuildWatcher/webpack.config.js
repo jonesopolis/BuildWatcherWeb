@@ -4,7 +4,7 @@ var path = require('path');
 var APP_DIR = path.resolve(__dirname, 'wwwroot');
 
 var config = {
-    entry: APP_DIR + "/entry.js",
+    entry: APP_DIR + "/app.js",
     output: {
         path: APP_DIR,
         filename: "bundle.js"
