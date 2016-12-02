@@ -23,20 +23,7 @@ namespace BuildWatcher.Controllers
         [HttpGet("")]
         public async Task<IActionResult> Index()
         {
-            var result = await _buildRepo.GetSubscribedBuildsForUser(User.Identity.Name);
-            if (result.IsSuccess)
-            {
-                return View(result.ResultObject);
-            }
-
-            return new StatusCodeResult(500);
-        }
-
-        [HttpPost("subscribe/{build}")]
-        public async Task<IActionResult> SubscribeToBuild(string build)
-        {
-
-            return Ok();
+            return View();
         }
     }
 }

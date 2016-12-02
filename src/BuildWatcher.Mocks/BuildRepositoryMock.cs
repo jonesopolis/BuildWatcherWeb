@@ -18,23 +18,23 @@ namespace BuildWatcher.Mocks
                 var list = new List<Build>();
 
                 var build = new Build();
-                build.FriendlyName = "Company 1";
-                build.Name = "Super Awesome Catchphrase!";
+                build.FriendlyName = "Very Great Company!";
+                build.Name = "Company 1";
                 list.Add(build);
 
                 build = new Build();
-                build.FriendlyName = "Company 2";
-                build.Name = "Super Awesome Catchphrase!";
+                build.FriendlyName = "Super Awesome Company!";
+                build.Name = "Company 2";
                 list.Add(build);
 
                 build = new Build();
-                build.FriendlyName = "Company 3";
-                build.Name = "Super Awesome Catchphrase!";
+                build.FriendlyName = "World's Best Company!";
+                build.Name = "Company 3";
                 list.Add(build);
 
                 build = new Build();
-                build.FriendlyName = "Company 4";
-                build.Name = "Super Awesome Catchphrase!";
+                build.FriendlyName = "Most Amazing Company";
+                build.Name = "Company 4";
                 list.Add(build);
 
                 return Task.FromResult(RepositoryResult<List<Build>>.CreateSuccess(list));

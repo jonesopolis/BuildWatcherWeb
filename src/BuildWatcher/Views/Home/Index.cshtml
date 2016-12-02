@@ -1,60 +1,18 @@
-﻿@model List<BuildWatcher.Model.Build>
+﻿<!DOCTYPE html>
 
-    <!DOCTYPE html>
-    <html>
+<html>
 
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Build Watcher</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi"
-            crossorigin="anonymous">
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build Watcher</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi"
+        crossorigin="anonymous">
+</head>
 
-    <body>
+<body>
+    <div id='app' name='hello'/>
+    <script type="text/javascript" src="./bundle.js"></script>
+</body>
 
-        <nav class="navbar navbar-dark bg-inverse">
-            <div class="container">
-                <a class="navbar-brand" href="#">Build Watcher</a>
-
-                <span class="navbar-text float-sm-right float-md-right text-muted">
-            @User.Identity.Name
-        </span>
-
-                <button type="button" class="btn btn-outline-success float-sm-right float-md-right navbar-btn" data-toggle="modal" data-target="#myModal"
-                    style="margin-right: 50px">Add Build</button>
-            </div>
-        </nav>
-
-        <div class="container body-content">
-
-            <div class="row">
-                @foreach (var build in Model) 
-                {
-                <div class="col-md-4 col-lg-4">
-                    <div class="card">
-                        <h3 class="card-header">@build.FriendlyName</h3>
-                        <div class="card-block">
-                            <h4 class="card-title">Special title treatment</h4>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                }
-            </div>
-
-            <hr/>
-            <footer>
-                <p>&copy; 2016</p>
-            </footer>
-
-            @await Html.PartialAsync("_BuildListModal")
-        </div>
-
-        <div id="app"></div>
-
-        <script type="text/javascript" src="./bundle.js"></script>
-    </body>
-
-    </html>
+</html>

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class BuildItem extends React.Component {
     constructor(props) {
@@ -10,9 +9,9 @@ class BuildItem extends React.Component {
         return (
             <div className="col-md-4 col-lg-4">
                 <div className="card">
-                    <h3 className="card-header">@build.FriendlyName</h3>
+                    <h3 className="card-header">{this.props.build.friendlyName}</h3>
                     <div className="card-block">
-                        <h4 className="card-title">Special title treatment</h4>
+                        <h4 className="card-title">{this.props.build.name}</h4>
                         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <a href="#" className="btn btn-primary">Go somewhere</a>
                     </div>
@@ -22,5 +21,5 @@ class BuildItem extends React.Component {
     }
 }
 
-ReactDOM.render(<BuildItem />, document.getElementById('app'));
+
 export default BuildItem
