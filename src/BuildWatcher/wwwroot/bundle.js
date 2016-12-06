@@ -44491,7 +44491,6 @@
 	var BuildWatcherApp = function BuildWatcherApp() {
 	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 	    var action = arguments[1];
-	
 	    return {
 	        username: (0, _usernameReducer2.default)(state.username, action),
 	        builds: (0, _buildsReducer2.default)(state.builds, action)
