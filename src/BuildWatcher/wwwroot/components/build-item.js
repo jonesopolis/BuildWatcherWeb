@@ -21,5 +21,4 @@ class BuildItem extends React.Component {
     }
 }
 
-
 export default BuildItem

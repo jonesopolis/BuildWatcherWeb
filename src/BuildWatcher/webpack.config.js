@@ -4,7 +4,7 @@ var path = require('path');
 var APP_DIR = path.resolve(__dirname, 'wwwroot');
 
 var config = {
-    entry: APP_DIR + "/app.jsx",
+    entry: APP_DIR + "/index.js",
     output: {
         path: APP_DIR,
         filename: "bundle.js"
@@ -12,7 +12,7 @@ var config = {
     module: {
         loaders: [
             {
-                test: /.jsx?$/,
+                test: /.js?$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
@@ -24,7 +24,12 @@ var config = {
     },
     "stats": {
         "colors": true
-    }
+    },
+    modules: [
+        path.resolve('./'),
+        path.resolve('./node_modules')
+    ],
+    devtool: 'source-map'
 };
 
 module.exports = config;

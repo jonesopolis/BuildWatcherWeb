@@ -1,11 +1,14 @@
-import React from 'react';
-import { Modal, Popover, Tooltip, OverlayTrigger, Button } from 'react-bootstrap';
+import React, { PropTypes } from 'react'
+import { Modal, Popover, Tooltip, OverlayTrigger, Button } from 'react-bootstrap'
+import { addBuild } from '../actions/actions'
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { showModal: false };
 
+        props.setUsername();
+
+        this.state = { showModal: false };
         this.open = this.open.bind(this);
         this.close = this.close.bind(this);
     }
@@ -15,7 +18,8 @@ class NavBar extends React.Component {
     }
 
     open() {
-        this.setState({ showModal: true });
+        addBuild(i++, 'this is a friendly name!')
+        //this.setState({ showModal: true });
     }
 
     render() {
@@ -35,7 +39,7 @@ class NavBar extends React.Component {
                     <div className="container">
                         <a className="navbar-brand" href="#">Build Watcher</a>
 
-                        <span className="navbar-text float-sm-right float-md-right text-muted">UserName!</span>
+                        <span className="navbar-text float-sm-right float-md-right text-muted">{this.props.username}</span>
 
                         <button type="button" id='add-build' onClick={this.open}
                             className="btn btn-outline-success float-sm-right float-md-right navbar-btn">Add Build</button>
@@ -77,6 +81,11 @@ class NavBar extends React.Component {
             </div>
         )
     }
+}
+
+NavBar.propTypes = {
+    username: PropTypes.string.isRequired,
+    setUsername: PropTypes.func.isRequired
 }
 
 export default NavBar
