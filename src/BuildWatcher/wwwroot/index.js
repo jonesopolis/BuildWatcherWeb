@@ -5,7 +5,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import App from './components/app'
+import AppContainer from './containers/app-container'
 import reducer from './reducers/reducer'
 
 let store = createStore(
@@ -15,7 +15,7 @@ let store = createStore(
 
 render(
     <Provider store={store}>
-        <App />
+        <AppContainer />
     </Provider>,
     document.getElementById('app')
 );

@@ -1,18 +1,12 @@
 import { connect } from 'react-redux'
-import NavBar from '../components/nav-bar'
-import  { setUsername } from '../actions/actions'
+import NavBar from '../components/nav-bar/nav-bar'
 
 const mapStateToProps = (state) => ({
     username: state.username
 })
 
-const mapDispatchToProps = ({ 
-    setUsername: setUsername
-}) 
-
 const NavBarContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(NavBar)
 
 export default NavBarContainer

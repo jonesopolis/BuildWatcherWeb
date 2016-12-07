@@ -30,18 +30,17 @@ export const resolvedGetBuilds = (builds) => ({
     builds: builds
 })
 
-export const addBuild = () => {
+export const subscribeToBuild = (name) => {
     return (dispatch) => {
         axios({
             url: '/api/builds',
             method: 'get',
             headers: { 'Content-type': 'text/html; charset=UTF-8' }
-        }).then(s => dispatch(resolvedAddBuild('yessir', 'friendly!')), e => alert('error getting builds'));
+        }).then(s => dispatch(resolvedSubscribeToBuild(name)), e => alert('error subscribing to build'));
     }
 }
 
-export const resolvedAddBuild = (name, friendlyName) => ({
-    type: 'ADD_BUILD',
-    name: name,
-    friendlyName: friendlyName
+export const resolvedSubscribeToBuild = (name) => ({
+    type: 'SUBSCRIBE_TO_BUILD',
+    name: name
 })

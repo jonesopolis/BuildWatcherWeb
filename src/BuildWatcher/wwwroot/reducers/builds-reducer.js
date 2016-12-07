@@ -1,24 +1,11 @@
-const BuildReducer = (action) => {
-  switch (action.type) {
-    case 'ADD_BUILD':
-      return {
-        name: action.name,
-        friendlyName: action.friendlyName
-      }    
-    default:
-      return state
-  }
-}
-
 const BuildsReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_BUILDS':
       return action.builds
-    case 'ADD_BUILD':
-      return [
-        ...state,
-        BuildReducer(action)
-      ]    
+    case 'SUBSCRIBE_TO_BUILD':
+      var sub = state.find(b => b.name === action.name)
+      sub.isSubscribed = true
+      return [ ...state ]   
     default:
       return state
   }

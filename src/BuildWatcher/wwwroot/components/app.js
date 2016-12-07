@@ -1,20 +1,25 @@
-import React from 'react';
-import BuildsContainer from '../containers/builds-container';
+import React, { PropTypes } from 'react';
 import NavBarContainer from '../containers/nav-bar-container';
+import BuildItem from './build-item'
 
 class App extends React.Component {
     constructor(props) {
-        super(props);  
+        super(props);        
+        props.getBuilds();
+        props.setUsername();
     }
 
     render() {
+        let builds = this.props.subscribedBuilds.map(b => <BuildItem key={b.name} build={b} />);
+        
         return (
             <div>
                 <NavBarContainer />
 
-                <div className="container body-content">
-
-                    <BuildsContainer />
+                <div className='container body-content'>
+                    <div className='row'>
+                        {builds}
+                    </div>
 
                     <hr />
                     <footer>
@@ -25,6 +30,13 @@ class App extends React.Component {
             </div>
         );
     }
+}
+
+App.propTypes = {
+    builds: PropTypes.array.isRequired,
+    subscribedBuilds: PropTypes.array.isRequired,
+    getBuilds: PropTypes.func.isRequired,
+    setUsername: PropTypes.func.isRequired
 }
 
 export default App;

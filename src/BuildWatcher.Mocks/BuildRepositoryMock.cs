@@ -12,7 +12,7 @@ namespace BuildWatcher.Mocks
         {
             var mock = new Mock<IBuildRepository>();
 
-            mock.Setup(m => m.GetSubscribedBuildsForUser(It.IsAny<string>()))
+            mock.Setup(m => m.GetBuilds(It.IsAny<string>()))
                 .Returns(() =>
             {
                 var list = new List<Build>();
@@ -20,21 +20,25 @@ namespace BuildWatcher.Mocks
                 var build = new Build();
                 build.FriendlyName = "Very Great Company!";
                 build.Name = "Company 1";
+                build.IsSubscribed = false;
                 list.Add(build);
 
                 build = new Build();
                 build.FriendlyName = "Super Awesome Company!";
                 build.Name = "Company 2";
+                build.IsSubscribed = false;
                 list.Add(build);
 
                 build = new Build();
                 build.FriendlyName = "World's Best Company!";
                 build.Name = "Company 3";
+                build.IsSubscribed = true;
                 list.Add(build);
 
                 build = new Build();
                 build.FriendlyName = "Most Amazing Company";
                 build.Name = "Company 4";
+                build.IsSubscribed = false;
                 list.Add(build);
 
                 return Task.FromResult(RepositoryResult<List<Build>>.CreateSuccess(list));

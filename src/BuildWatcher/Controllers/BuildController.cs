@@ -21,9 +21,9 @@ namespace BuildWatcher.Controllers
         }
 
         [HttpGet("")]
-        public async Task<IActionResult> GetSubscribedBuildsForUser()
+        public async Task<IActionResult> GetBuilds()
         {
-            var result = await _buildRepo.GetSubscribedBuildsForUser(User.Identity.Name);
+            var result = await _buildRepo.GetBuilds(User.Identity.Name);
             if (result.IsSuccess)
             {
                 return Ok(result.ResultObject);
