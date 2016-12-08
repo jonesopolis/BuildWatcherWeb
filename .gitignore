@@ -275,5 +275,5 @@ __pycache__/
 # tools/
 
 #Webpack bundles
-*.bundle.js
-*.bundle.js.map
+*bundle.js
+*bundle.js.map
