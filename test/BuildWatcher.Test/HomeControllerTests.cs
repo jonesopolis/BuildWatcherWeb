@@ -34,7 +34,7 @@ namespace BuildWatcher.Test
         [TestMethod]
         public async Task HomeControllerIndex_ValidUser_ReturnsOk()
         {
-            var mock = new Mock<IBuildRepository>();
+            var mock = new Mock<IUserRepository>();
             mock.Setup(m => m.GetSubscribedBuildsForUser(It.IsAny<string>()))
                 .ReturnsAsync(RepositoryResult<List<Build>>.CreateSuccess(new List<Build>()));
 
@@ -48,7 +48,7 @@ namespace BuildWatcher.Test
         [TestMethod]
         public async Task HomeControllerIndex_InvalidUser_Returns500()
         {
-            var mock = new Mock<IBuildRepository>();
+            var mock = new Mock<IUserRepository>();
             mock.Setup(m => m.GetSubscribedBuildsForUser(It.IsAny<string>()))
                 .ReturnsAsync(RepositoryResult<List<Build>>.CreateNotFound());
 

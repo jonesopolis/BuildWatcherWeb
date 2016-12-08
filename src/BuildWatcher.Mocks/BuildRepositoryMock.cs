@@ -8,9 +8,9 @@ namespace BuildWatcher.Mocks
 {
     public static class BuildRepositoryMock
     {
-        public static IBuildRepository GetMock()
+        public static IUserRepository GetMock()
         {
-            var mock = new Mock<IBuildRepository>();
+            var mock = new Mock<IUserRepository>();
 
             mock.Setup(m => m.GetBuilds(It.IsAny<string>()))
                 .Returns(() =>
