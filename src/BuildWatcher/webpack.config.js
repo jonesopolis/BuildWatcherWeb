@@ -4,7 +4,10 @@ var path = require('path');
 var APP_DIR = path.resolve(__dirname, 'wwwroot');
 
 var config = {
-    entry: APP_DIR + "/index.js",
+    entry: {
+        app: APP_DIR + "/index.js",
+        vendor: ['react', 'react-dom', 'react-redux', 'redux', 'redux-thunk', 'axios', 'react-bootstrap']
+    },
     output: {
         path: APP_DIR,
         filename: "bundle.js"
@@ -29,7 +32,10 @@ var config = {
         path.resolve('./'),
         path.resolve('./node_modules')
     ],
-    devtool: 'source-map'
+    devtool: 'source-map',
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
+    ]
 };
 
 module.exports = config;

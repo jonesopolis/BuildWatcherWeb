@@ -23,6 +23,13 @@
                 "cd src/BuildWatcher && webpack --progress --colors --watch"
             ],
             "showOutput": "always"
+        },
+        {
+            "taskName": "dotnet restore",
+            "args": [
+                "cd src && dotnet restore BuildWatcher BuildWatcher.Mocks BuildWatcher.Model BuildWatcher.Repository"
+            ],
+            "showOutput": "always"
         }
     ]
 }
