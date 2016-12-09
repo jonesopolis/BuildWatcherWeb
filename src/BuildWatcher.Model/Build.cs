@@ -1,9 +1,11 @@
-﻿namespace BuildWatcher.Model
+﻿using System;
+
+namespace BuildWatcher.Model
 {
     public class Build
     {
-        public string Name { get; set; }
-        public string FriendlyName { get; set; }
-        public bool IsSubscribed { get; set; }
+        public string RequestedBy { get; set; }
+        public DateTime Start { get; set; }
+        public TimeSpan Length { get; set; }
     }
 }

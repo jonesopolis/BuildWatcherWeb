@@ -25,9 +25,9 @@
             "showOutput": "always"
         },
         {
-            "taskName": "dotnet restore",
+            "taskName": "get going",
             "args": [
-                "cd src && dotnet restore BuildWatcher BuildWatcher.Mocks BuildWatcher.Model BuildWatcher.Repository"
+                "cd src && dotnet restore BuildWatcher BuildWatcher.Mocks BuildWatcher.Model BuildWatcher.Repository && cd BuildWatcher && npm install && webpack"
             ],
             "showOutput": "always"
         }

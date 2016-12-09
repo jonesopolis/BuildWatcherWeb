@@ -34,11 +34,11 @@ namespace BuildWatcher.Test
         [TestMethod]
         public async Task HomeControllerIndex_ValidUser_ReturnsOk()
         {
-            var mock = new Mock<IUserRepository>();
-            mock.Setup(m => m.GetSubscribedBuildsForUser(It.IsAny<string>()))
+            var mock = new Mock<IBuildRepository>();
+            mock.Setup(m => m.GetSubscribedBuilds(It.IsAny<string>()))
                 .ReturnsAsync(RepositoryResult<List<Build>>.CreateSuccess(new List<Build>()));
 
-            var controller = new HomeController(mock.Object);
+            var controller = new HomeController();
             controller.ControllerContext = _context;
 
             var result = await controller.Index();
@@ -48,11 +48,11 @@ namespace BuildWatcher.Test
         [TestMethod]
         public async Task HomeControllerIndex_InvalidUser_Returns500()
         {
-            var mock = new Mock<IUserRepository>();
-            mock.Setup(m => m.GetSubscribedBuildsForUser(It.IsAny<string>()))
+            var mock = new Mock<IBuildRepository>();
+            mock.Setup(m => m.GetSubscribedBuilds(It.IsAny<string>()))
                 .ReturnsAsync(RepositoryResult<List<Build>>.CreateNotFound());
 
-            var controller = new HomeController(mock.Object);
+            var controller = new HomeController();
             controller.ControllerContext = _context;
 
             var result = await controller.Index();

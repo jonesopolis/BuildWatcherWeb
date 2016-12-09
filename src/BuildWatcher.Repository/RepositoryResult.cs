@@ -12,6 +12,7 @@
 
         internal static RepositoryResult CreateSuccess() => new RepositoryResult(RepositoryResultCode.Success);
         internal static RepositoryResult CreateNotFound() => new RepositoryResult(RepositoryResultCode.NotFound);
+        internal static RepositoryResult CreateInvalid() => new RepositoryResult(RepositoryResultCode.InvalidOperation);
     }
 
     public sealed class RepositoryResult<T> : RepositoryResult
@@ -30,6 +31,7 @@
     public enum RepositoryResultCode
     {
         Success,
-        NotFound
+        NotFound,
+        InvalidOperation
     }
 }
