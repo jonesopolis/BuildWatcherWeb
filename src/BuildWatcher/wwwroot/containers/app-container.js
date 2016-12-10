@@ -1,15 +1,18 @@
 import { connect } from 'react-redux'
 import App from '../components/app'
-import  { getBuilds, setUsername } from '../actions/actions'
+import  { getUsername } from '../actions/user'
+import  { getAllBuilds, getSubscribedBuilds, unsubscribeFromBuild } from '../actions/build'
 
 const matchStateToProps = (state) => ({
     builds: state.builds,
-    subscribedBuilds: state.builds.filter((b) => b.isSubscribed) 
+    subscribedBuilds: state.subscribedBuilds
 });
 
 const matchDispatchToProps = ({
-  getBuilds: getBuilds,
-  setUsername: setUsername
+  getAllBuilds: getAllBuilds,
+  getSubscribedBuilds: getSubscribedBuilds,
+  unsubscribeFromBuild: unsubscribeFromBuild,
+  getUsername: getUsername
 });
 
 const AppContainer = connect(

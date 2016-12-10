@@ -23,7 +23,7 @@ class BuildsList extends React.Component {
 }
 
 BuildsList.PropTypes = {
-    builds: PropTypes.array.isRequired,
+    builds: PropTypes.any.isRequired,
     subscribeToBuild : PropTypes.func.isRequired
 } 
 

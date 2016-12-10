@@ -26,6 +26,7 @@
 
         internal static RepositoryResult<T> CreateSuccess(T item) => new RepositoryResult<T>(RepositoryResultCode.Success, item);
         internal new static RepositoryResult<T> CreateNotFound() => new RepositoryResult<T>(RepositoryResultCode.NotFound);
+        internal new static RepositoryResult CreateInvalid() => new RepositoryResult<T>(RepositoryResultCode.InvalidOperation);
     }
 
     public enum RepositoryResultCode

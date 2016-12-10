@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import BuildsList from '../components/nav-bar/builds-list'
-import { subscribeToBuild } from '../actions/actions'
+import { subscribeToBuild } from '../actions/build'
 
 const mapStateToProps = (state) => ({
     builds: state.builds

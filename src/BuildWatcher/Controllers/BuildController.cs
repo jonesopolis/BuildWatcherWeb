@@ -32,6 +32,18 @@ namespace BuildWatcher.Controllers
             return new StatusCodeResult(500);
         }
 
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAllBuilds()
+        {
+            var result = await _buildRepo.GetAllBuilds();
+            if (result.IsSuccess)
+            {
+                return Ok(result.ResultObject);
+            }
+
+            return new StatusCodeResult(500);
+        }
+
         [HttpGet("subscribe/{buildName}")]
         public async Task<IActionResult> SubscribeUserToBuild(string buildName)
         {

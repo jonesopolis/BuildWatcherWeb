@@ -90,6 +90,8 @@ namespace BuildWatcher.Mocks
                     return Task.FromResult(RepositoryResult.CreateSuccess());
                 });
 
+            mock.Setup(m => m.GetAllBuilds()).Returns(Task.FromResult(RepositoryResult<List<BuildResult>>.CreateSuccess(GetList())));
+
             return mock.Object;
         }
     }

@@ -5,13 +5,14 @@ import BuildItem from './build-item'
 class App extends React.Component {
     constructor(props) {
         super(props);        
-        props.getBuilds();
-        props.setUsername();
+        props.getAllBuilds();
+        props.getSubscribedBuilds();
+        props.getUsername();
     }
 
     render() {
-        let builds = this.props.subscribedBuilds.map(b => <BuildItem key={b.name} build={b} />);
-        
+        let builds = this.props.subscribedBuilds.map(b => <BuildItem key={b.name} build={b} unsubscribeFromBuild={this.props.unsubscribeFromBuild} />);
+        console.log(builds);
         return (
             <div>
                 <NavBarContainer />
@@ -35,8 +36,12 @@ class App extends React.Component {
 App.propTypes = {
     builds: PropTypes.array.isRequired,
     subscribedBuilds: PropTypes.array.isRequired,
-    getBuilds: PropTypes.func.isRequired,
-    setUsername: PropTypes.func.isRequired
+
+
+    getAllBuilds: PropTypes.func.isRequired,
+    getSubscribedBuilds: PropTypes.func.isRequired,
+    unsubscribeFromBuild: PropTypes.func.isRequired, 
+    getUsername: PropTypes.func.isRequired
 }
 
 export default App;

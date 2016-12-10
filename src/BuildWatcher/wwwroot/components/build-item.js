@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Popover, OverlayTrigger, Button } from 'react-bootstrap'
 
 class BuildItem extends React.Component {
     constructor(props) {
         super(props);
+    
+        this.unsubscribe = this.unsubscribe.bind(this);
+    }
+
+    unsubscribe() {
+        this.props.unsubscribeFromBuild(this.props.build.name);
     }
 
     render() {
@@ -20,7 +26,7 @@ class BuildItem extends React.Component {
                     <div className='card-header'>
                         <span>{this.props.build.friendlyName}</span>
                         <OverlayTrigger trigger={['hover', 'focus']} placement="top" overlay={popoverHoverFocus}>
-                            <Button bsSize="xsmall" style={{float:'right'}}>...</Button>
+                            <Button bsSize="xsmall" style={{ float: 'right' }} onClick={this.unsubscribe}>...</Button>
                         </OverlayTrigger>
                     </div>
                     <div className="card-block">
@@ -31,6 +37,11 @@ class BuildItem extends React.Component {
             </div >
         );
     }
+}
+
+BuildItem.propTypes = {
+    build: PropTypes.any.isRequired,
+    unsubscribeFromBuild: PropTypes.func.isRequired
 }
 
 export default BuildItem
