@@ -12,7 +12,7 @@ class App extends React.Component {
 
     render() {
         let builds = this.props.subscribedBuilds.map(b => <BuildItem key={b.name} build={b} unsubscribeFromBuild={this.props.unsubscribeFromBuild} />);
-        console.log(builds);
+
         return (
             <div>
                 <NavBarContainer />

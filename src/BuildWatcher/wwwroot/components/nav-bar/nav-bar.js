@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Modal, Popover, Tooltip, OverlayTrigger, Button } from 'react-bootstrap'
-import BuildsListContainer from '../../containers/builds-list-container'
+import BuildListContainer from '../../containers/build-list-container'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -48,7 +48,7 @@ class NavBar extends React.Component {
                         <Modal.Title>Available Builds</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <BuildsListContainer />
+                        <BuildListContainer />
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={this.close}>Close</Button>

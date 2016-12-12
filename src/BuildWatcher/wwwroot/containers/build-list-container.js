@@ -1,19 +1,20 @@
 import { connect } from 'react-redux'
-import BuildsList from '../components/nav-bar/builds-list'
+import BuildList from '../components/nav-bar/build-list'
 import { subscribeToBuild } from '../actions/build'
 
 const mapStateToProps = (state) => ({
-    builds: state.builds
+    builds: state.builds,
+    subscribedBuilds: state.subscribedBuilds.map((b) => b.name)
 })
 
 const mapDispatchToProps = ({
   subscribeToBuild: subscribeToBuild
 })
 
-const BuildsListContainer = connect(
+const BuildListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(BuildsList)
+)(BuildList)
 
-export default BuildsListContainer
+export default BuildListContainer
 
