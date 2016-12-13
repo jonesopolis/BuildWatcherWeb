@@ -43,7 +43,7 @@ namespace BuildWatcher.Controllers
 
             return new StatusCodeResult(500);
         }
-
+        
         [HttpGet("subscribe/{buildName}")]
         public async Task<IActionResult> SubscribeUserToBuild(string buildName)
         {

@@ -15,6 +15,6 @@ namespace BuildWatcher.Repository
 
         IEnumerable<string> GetAllBuildDefinitions();
 
-        List<BuildResult> GetBuildResults(List<string> buildDefs);
+        List<RecentBuilds> GetBuildResults(List<string> buildDefs);
     }
 }

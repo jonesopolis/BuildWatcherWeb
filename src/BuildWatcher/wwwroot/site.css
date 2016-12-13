@@ -2,6 +2,36 @@
     padding: 45px 0 0 0;
 }
 
+/* nav-bar */
+
 #add-build {
     margin-right: 50px
+}
+
+/* build-item */
+.build-img-container-lg {
+  height: 140px; /*can be anything*/
+  width: 140px; /*can be anything*/
+  position: relative;
+}
+
+/* build-item */
+.build-img-container-sm {
+  height: 140px; /*can be anything*/
+  width: 80px; /*can be anything*/
+  position: relative;
+  padding:5px;
+}
+
+.build-img {
+    max-height: 100%;  
+    max-width: 100%; 
+    width: auto;
+    height: auto;
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;
 }
