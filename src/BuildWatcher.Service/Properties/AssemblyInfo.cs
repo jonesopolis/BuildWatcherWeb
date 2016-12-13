@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BuildWatcher.Repository")]
+[assembly: AssemblyProduct("BuildWatcher.Service")]
 [assembly: AssemblyTrademark("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -16,7 +16,5 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ddb81a1c-afd0-496a-b74a-541e93e0f8fb")]
-
+[assembly: Guid("4499d93d-e9c4-44ad-9db2-8dd543dbf510")]
 [assembly: InternalsVisibleTo("BuildWatcher.Mocks")]
-[assembly: InternalsVisibleTo("BuildWatcher.Test")]

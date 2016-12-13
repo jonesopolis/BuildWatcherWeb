@@ -1,11 +1,14 @@
 ﻿using System.IO;
 using BuildWatcher.Mocks;
-using BuildWatcher.Repository;
+using BuildWatcher.Service;
+using BuildWatcher.SignalR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Net.Http.Server;
+using Newtonsoft.Json;
 
 namespace BuildWatcher
 {
@@ -29,8 +32,10 @@ namespace BuildWatcher
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSignalR(options => options.Hubs.EnableDetailedErrors = true);
             services.AddMvc();
-            services.AddTransient<IBuildRepository>(s => BuildRepositoryMock.GetMock());
+            services.AddTransient<IBuildRepository>(s => Mockers.MockIBuildRepository());
+            services.TryAddSingleton<IBuildMonitorService>(s => Mockers.MockIBuildMonitorService());
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -43,8 +48,9 @@ namespace BuildWatcher
             }
 
             app.UseStaticFiles();
-
             app.UseMvcWithDefaultRoute();
+            app.UseWebSockets();
+            app.UseSignalR();
         }
 
     }

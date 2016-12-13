@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using BuildWatcher.Model;
 
-namespace BuildWatcher.Repository
+namespace BuildWatcher.Service
 {
     public interface IBuildRepository
     {

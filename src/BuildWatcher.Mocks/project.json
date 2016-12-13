@@ -3,7 +3,7 @@
 
   "dependencies": {
     "BuildWatcher.Model": "1.0.0-*",
-    "BuildWatcher.Repository": "1.0.0-*",
+    "BuildWatcher.Service": "1.0.0-*",
     "Moq": "4.6.38-alpha"
   },
 

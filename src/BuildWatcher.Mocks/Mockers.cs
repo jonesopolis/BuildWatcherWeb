@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using BuildWatcher.Model;
-using BuildWatcher.Repository;
+using BuildWatcher.Service;
 using Moq;
 
 namespace BuildWatcher.Mocks
 {
-    public static class BuildRepositoryMock
+    public static class Mockers
     {
-        private static List<RecentBuilds> _list = GetList();
+        private static readonly List<RecentBuilds> _list = GetList();
 
         private static List<RecentBuilds> GetList()
         {
@@ -50,8 +51,8 @@ namespace BuildWatcher.Mocks
 
             return list;
         }
-
-        public static IBuildRepository GetMock()
+        
+        public static IBuildRepository MockIBuildRepository()
         {
             var mock = new Mock<IBuildRepository>();
 
@@ -96,6 +97,49 @@ namespace BuildWatcher.Mocks
             mock.Setup(m => m.GetSingleBuild(It.IsAny<string>()))
                 .Returns<string>(b => Task.FromResult(RepositoryResult<RecentBuilds>.CreateSuccess(GetList().First(bb => bb.Name == b))));
 
+            return mock.Object;
+        }
+
+        public static IBuildMonitorService MockIBuildMonitorService()
+        {
+            var mock = new Mock<IBuildMonitorService>();
+
+            var r = new Random();
+
+            new Timer(_ =>
+            {
+                if (!_list.Any())
+                {
+                    return;
+                }
+
+                var build = _list[r.Next(0, _list.Count)];
+
+                build.TertiaryBuild = build.SecondaryBuild;
+                build.SecondaryBuild = build.LatestBuild;
+                if (build.SecondaryBuild.Result == BuildResult.InProgress)
+                {
+                    build.SecondaryBuild.Result = r.Next(0, 2) % 2 == 0 ? BuildResult.Success : BuildResult.Failure;
+                }
+
+                var latest = new Build();
+                latest.RequestedBy = new[] {"David", "Kat", "Elijah", "Atlas"}[r.Next(0, 4)];
+                latest.Start = DateTime.Now.AddMinutes(r.Next(3, 15) * -1);
+                latest.Length = DateTime.Now - latest.Start;
+
+                switch (r.Next(0, 5))
+                {
+                    case 0: latest.Result = BuildResult.Success; break;
+                    case 1: latest.Result = BuildResult.Failure; break;
+                    case 2: latest.Result = BuildResult.InProgress; break;
+                    case 3: latest.Result = BuildResult.PartialSuccess; break;
+                    case 4: latest.Result = BuildResult.Unknown; break;
+                }
+
+                mock.Raise(m => m.BuildStatusChanged += (s,e) => { }, null, build);
+
+            },null,0, 5000);
+            
             return mock.Object;
         }
     }

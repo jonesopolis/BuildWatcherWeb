@@ -1,4 +1,4 @@
-﻿namespace BuildWatcher.Repository
+﻿namespace BuildWatcher.Service
 {
     public class RepositoryResult
     {

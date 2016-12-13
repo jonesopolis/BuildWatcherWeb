@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using BuildWatcher.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BuildWatcher.Controllers

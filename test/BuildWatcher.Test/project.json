@@ -7,7 +7,7 @@
     "MSTest.TestFramework": "1.0.6-preview",
     "BuildWatcher": "1.0.0-*",
     "BuildWatcher.Model": "1.0.0-*",
-    "BuildWatcher.Repository": "1.0.0-*",
+    "BuildWatcher.Service": "1.0.0-*",
     "Microsoft.AspNetCore.Mvc": "1.1.0"
   },
   "frameworks": {
