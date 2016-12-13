@@ -5,10 +5,7 @@ const SubscribedBuildsReducer = (state = [], action) => {
         case 'SUBSCRIBE_TO_BUILD':
             return [
                 ...state,
-                {
-                    name: action.name,
-                    friendlyname: action.friendlyName
-                }
+                action.build
             ]
         case 'UNSUBSCRIBE_FROM_BUILD':
             return state.filter(function (b) {

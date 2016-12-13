@@ -5,7 +5,7 @@ class BuildItem extends React.Component {
     constructor(props) {
         super(props);
 
-        this.unsubscribe = this.unsubscribe.bind(this);
+        console.log(props);
 
         this.successImg = <img src='../../imgs/success.png' className='build-img' />
         this.failureImg = <img src='../../imgs/failure.png' className='build-img' />
@@ -13,12 +13,13 @@ class BuildItem extends React.Component {
         this.inProgressImg = <img src='../../imgs/in-progress.png' className='build-img' />
         this.unknownImg = <img src='../../imgs/unknown.png' className='build-img' />
 
+        this.unsubscribe = this.unsubscribe.bind(this);
         this.popoverHoverFocus = this.popoverHoverFocus.bind(this);
         this.getImg = this.getImg.bind(this);
     }
 
     unsubscribe() {
-        this.props.unsubscribeFromBuild(this.props.recentBuilds.name);
+        this.props.unsubscribeFromBuild(this.props.build.name);
     }
 
     getImg(build) {
@@ -58,15 +59,13 @@ class BuildItem extends React.Component {
     }
 
     render() {
-        console.log(this.props.build);        
-
         return (
             <div className="col-lg-4 col-md-6 col-sm-12">
                 <div className="card">
                     <div className='card-header'>
                         <span>{this.props.build.friendlyName}</span>
 
-                        <Button bsSize="xsmall" style={{ float: 'right' }} onClick={this.unsubscribe}>...</Button>
+                        <a className='btn btn-sm btn-danger float-right' onClick={this.unsubscribe}>-</a>
 
                     </div>
                     <div className="card-block">

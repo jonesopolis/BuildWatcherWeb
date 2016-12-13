@@ -93,6 +93,9 @@ namespace BuildWatcher.Mocks
             mock.Setup(m => m.GetAllBuilds())
                 .Returns(Task.FromResult(RepositoryResult<List<RecentBuilds>>.CreateSuccess(GetList())));
             
+            mock.Setup(m => m.GetSingleBuild(It.IsAny<string>()))
+                .Returns<string>(b => Task.FromResult(RepositoryResult<RecentBuilds>.CreateSuccess(GetList().First(bb => bb.Name == b))));
+
             return mock.Object;
         }
     }

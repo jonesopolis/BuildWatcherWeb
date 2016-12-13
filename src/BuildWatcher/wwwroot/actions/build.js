@@ -24,13 +24,13 @@ export const resolvedGetSubscribedBuilds = (subscribedBuilds) => ({
 
 export const subscribeToBuild = (name) => {
     return (dispatch) => {
-        subscribeToBuildApi(name).then(s => dispatch(resolvedSubscribeToBuild(name)), e => alert('error subscribing to build'));
+        subscribeToBuildApi(name).then(s => dispatch(resolvedSubscribeToBuild(s.data)), e => alert('error subscribing to build'));
     }
 }
 
-export const resolvedSubscribeToBuild = (name) => ({
+export const resolvedSubscribeToBuild = (build) => ({
     type: 'SUBSCRIBE_TO_BUILD',
-    name: name
+    build: build
 })
 
 export const unsubscribeFromBuild = (name) => {

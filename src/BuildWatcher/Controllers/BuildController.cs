@@ -51,7 +51,11 @@ namespace BuildWatcher.Controllers
 
             if (result.IsSuccess)
             {
-                return Ok();
+                var result2 = await _buildRepo.GetSingleBuild(buildName);
+                if(result2.IsSuccess)
+                {
+                    return Ok(result2.ResultObject);
+                }
             }
 
             if (result.ResultCode == RepositoryResultCode.InvalidOperation)
