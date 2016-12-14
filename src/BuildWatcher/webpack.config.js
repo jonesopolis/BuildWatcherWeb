@@ -6,7 +6,7 @@ var APP_DIR = path.resolve(__dirname, 'wwwroot');
 var config = {
     entry: {
         app: APP_DIR + "/index.js",
-        vendor: ['react', 'react-dom', 'react-redux', 'redux', 'redux-thunk', 'axios', 'react-bootstrap']
+        vendor: ['react', 'react-dom', 'react-redux', 'redux', 'redux-thunk', 'axios', 'react-bootstrap', 'jquery', 'ms-signalr-client']
     },
     output: {
         path: APP_DIR,
@@ -34,7 +34,8 @@ var config = {
     ],
     devtool: 'source-map',
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
+        new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
+        new webpack.ProvidePlugin({ $: "jquery", jQuery: "jquery", "window.jQuery": "jquery" })        
     ]
 };
 

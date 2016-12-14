@@ -5,8 +5,6 @@ class BuildItem extends React.Component {
     constructor(props) {
         super(props);
 
-        console.log(props);
-
         this.successImg = <img src='../../imgs/success.png' className='build-img' />
         this.failureImg = <img src='../../imgs/failure.png' className='build-img' />
         this.partialSuccessImg = <img src='../../imgs/partial.png' className='build-img' />
@@ -15,7 +13,7 @@ class BuildItem extends React.Component {
 
         this.unsubscribe = this.unsubscribe.bind(this);
         this.popoverHoverFocus = this.popoverHoverFocus.bind(this);
-        this.getImg = this.getImg.bind(this);
+        this.getImg = this.getImg.bind(this);        
     }
 
     unsubscribe() {
