@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using BuildWatcher.Mocks;
 using BuildWatcher.Service;
-using BuildWatcher.SignalR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +31,14 @@ namespace BuildWatcher
 
         public void ConfigureServices(IServiceCollection services)
         {
+            var settings = new JsonSerializerSettings();
+            settings.ContractResolver = new SignalRContractResolver();
+
+            var serializer = JsonSerializer.Create(settings);
+            services.Add(new ServiceDescriptor(typeof(JsonSerializer),
+                         provider => serializer,
+                         ServiceLifetime.Transient));
+                         
             services.AddSignalR(options => options.Hubs.EnableDetailedErrors = true);
             services.AddMvc();
             services.AddTransient<IBuildRepository>(s => Mockers.MockIBuildRepository());

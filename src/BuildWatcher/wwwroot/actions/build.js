@@ -43,3 +43,14 @@ export const resolvedUnsubscribeFromBuild = (name) => ({
     type: 'UNSUBSCRIBE_FROM_BUILD',
     name: name
 })
+
+export const buildUpdated = (build) => {
+    return (dispatch) => {
+        dispatch(resolvedBuildUpdated(build))
+    }
+}
+
+export const resolvedBuildUpdated = (build) => ({
+    type: 'BUILD_UPDATED',
+    build: build
+})

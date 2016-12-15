@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import App from '../components/app'
 import  { getUsername } from '../actions/user'
-import  { getAllBuilds, getSubscribedBuilds, unsubscribeFromBuild } from '../actions/build'
+import  { getAllBuilds, getSubscribedBuilds, unsubscribeFromBuild, buildUpdated } from '../actions/build'
 
 const matchStateToProps = (state) => ({
     builds: state.builds,
@@ -12,7 +12,8 @@ const matchDispatchToProps = ({
   getAllBuilds: getAllBuilds,
   getSubscribedBuilds: getSubscribedBuilds,
   unsubscribeFromBuild: unsubscribeFromBuild,
-  getUsername: getUsername
+  getUsername: getUsername,
+  buildUpdated: buildUpdated
 });
 
 const AppContainer = connect(
