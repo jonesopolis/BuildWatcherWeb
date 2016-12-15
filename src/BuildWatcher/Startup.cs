@@ -42,7 +42,7 @@ namespace BuildWatcher
             services.AddSignalR(options => options.Hubs.EnableDetailedErrors = true);
             services.AddMvc();
             services.AddTransient<IBuildRepository>(s => Mockers.MockIBuildRepository());
-            services.TryAddSingleton<IBuildMonitorService>(s => Mockers.MockIBuildMonitorService());
+            services.AddSingleton<IBuildMonitorService>(s => Mockers.MockIBuildMonitorService());
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

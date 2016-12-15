@@ -12,16 +12,17 @@ const SubscribedBuildsReducer = (state = [], action) => {
             return state.filter(function (b) {
                 return b.name !== action.name;
             });
-        case 'BUILD_UPDATED':            
-        
-            for(var b of state) {
-                if(b.name === action.build.name) {
-                    var i = state.indexOf(b);
-                    state[i] = action.build;
-                    state.remove(b)
-                } 
-            }
-            return state;
+        case 'BUILD_UPDATED':
+
+            return state.map((b, i) => b.name === action.build.name ? action.build : b)
+
+
+
+            // console.log('')
+            // console.log(state[0].latestBuild);
+            // console.log(action.build.latestBuild);
+            // console.log('')
+            //return state;
         default:
             return state
     }
